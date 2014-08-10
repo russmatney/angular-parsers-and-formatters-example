@@ -1,4 +1,5 @@
-#parsers and formatters
+angular-parsers-and-formatters-example
+======================================
 
 An example app implementing front-end validation in angular
 using ngModelController's $parsers and $formatters.
