@@ -1,4 +1,7 @@
 angular.module('app', [])
   .controller('Controller', function($scope) {
-    $scope.hi = 'world';
+    $scope.savedUser = null;
+    $scope.save = function(user) {
+      $scope.savedUser = angular.copy(user);
+    };
   });

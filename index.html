@@ -10,20 +10,49 @@
 <body ng-app='app'>
 
     <div class="jumbotron">
-      <h1>parsers and formatters</h1>
     </div>
 
-    <div class="row" ng-init="hello = 'type me!'">
-      <h2 class="col-md-3">{{hello}}</h2>
-      <div class="col-md-3">
-        <input type="text" class="form-control" ng-model="hello">
+    <div class="row" ng-controller="Controller">
+      <div class="col-md-6">
+        <h4>User Account</h4>
+
+        <form name="userForm" ng-submit="save(user)">
+
+          <div class="form-group">
+            <input class="form-control" ng-model="user.name" placeholder="Name">
+          </div>
+
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon">@</span>
+              <input class="form-control" ng-model="user.email" placeholder="Email">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input class="form-control" ng-model="user.username" placeholder="Username">
+          </div>
+
+          <button type="submit" class="btn btn-default pull-right">Save</button>
+
+        </form>
       </div>
-    </div>
-    <br>
-    <br>
 
-    <div ng-controller="Controller">
-      hello, {{hi}}
+      <div class="col-md-6">
+        <div ng-show="savedUser">
+          <h4>Saved User:</h4>
+          <dl>
+            <dt>Name</dt>
+            <dd>{{savedUser.name}}</dd>
+
+            <dt>Email</dt>
+            <dd>{{savedUser.email}}</dd>
+
+            <dt>Username</dt>
+            <dd>{{savedUser.username}}</dd>
+          </dl>
+        </div>
+      </div>
     </div>
 
   <script src="./bower_components/angularjs/angular.min.js"></script>
