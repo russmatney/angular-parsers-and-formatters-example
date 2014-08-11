@@ -21,6 +21,10 @@
           <div class="form-group">
             <input name="name" class="form-control" ng-model="user.name"
               placeholder="Name" required>
+            <div class="alert alert-danger"
+              ng-show="userForm.name.$error.required && userForm.name.$dirty">
+              Please enter your name!
+            </div>
           </div>
 
           <div class="form-group">
@@ -28,21 +32,21 @@
               <span class="input-group-addon">@</span>
               <input name="email" class="form-control" ng-model="user.email"
                 placeholder="Email" required>
+              <div class="alert alert-danger"
+                ng-show="userForm.email.$error.required && userForm.email.$dirty">
+                Please enter your email!
+              </div>
             </div>
           </div>
 
           <div class="form-group">
             <input name="username" class="form-control" ng-model="user.username"
               placeholder="Username" required>
+            <div class="alert alert-danger"
+              ng-show="userForm.username.$error.required && userForm.username.$dirty">
+              Please enter your username!
+            </div>
           </div>
-
-          whole form: {{userForm.$error}}
-          <br>
-          name: {{userForm.name.$error}}
-          <br>
-          email: {{userForm.email.$error}}
-          <br>
-          username: {{userForm.username.$error}}
 
           <button type="submit" class="btn btn-default pull-right">
             Save
